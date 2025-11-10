@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>non-storage-hydro</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Solar</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14260,7 +14260,7 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="BC-Hydro-IPP---Resource-Analysis">BC Hydro IPP - Resource Analysis<a class="anchor-link" href="#BC-Hydro-IPP---Resource-Analysis">&#182;</a></h3><h4 id="Non-Storage-Hydro">Non-Storage Hydro<a class="anchor-link" href="#Non-Storage-Hydro">&#182;</a></h4>
+<h3 id="BC-Hydro-IPP---Resource-Analysis">BC Hydro IPP - Resource Analysis<a class="anchor-link" href="#BC-Hydro-IPP---Resource-Analysis">&#182;</a></h3><h4 id="Solar">Solar<a class="anchor-link" href="#Solar">&#182;</a></h4>
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
@@ -14744,14 +14744,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The type of resource contributing to the largest capacity and energy is Non-Storage Hydro</p>
+<p>The type of resource contributing to the largest capacity and energy is Solar</p>
 
 </div>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="Non-Storage-Hydro">Non-Storage Hydro<a class="anchor-link" href="#Non-Storage-Hydro">&#182;</a></h4><p>Non-storage hydro resources are hydroelectric facilities that generate power without relying on large reservoirs to store water. They utilize the natural flow of a river to turn turbines and produce electricity. The output is directly tied to the river’s flow.</p>
-<p>BC Hydro has Electricity Purchase Agreement for Non-Storage Hydro with 66 Independent Power Producers. In total, these 66 projects are capable of delivering approximately 7336.4 gigawatt hours of annual supply and approximately 1983.2 megawatts of capacity. The capacity and GWhr contribution of Non-Storage Hydro in various regions are given by the dataframes energy_NSH, capacity_NSH respectively.</p>
+<h4 id="Solar-Energy">Solar Energy<a class="anchor-link" href="#Solar-Energy">&#182;</a></h4><p>Solar energy is energy from the sun in the form of radiated heat and light. The sun’s radiant energy can be used to provide lighting and heat for buildings, and to produce electricity.</p>
+<p>Two active solar technologies that involve electrical or mechanical equipment are becoming increasingly common:</p>
+<ol>
+<li>solar thermal collectors or panels are used to heat water or ventilation air for use in buildings, and</li>
+<li>solar photovoltaic (PV) technology uses solar cells to convert sunlight directly into electricity.</li>
+</ol>
+<p>BC Hydro has Electricity Purchase Agreement for Solar with 2 Independent Power Producers. Both the projects use the solar photovoltaic (PV) technology for electricity generation. The 2 projects are capable of delivering 3.9 gigawatt hours of annual supply and approximately 2 megawatts of capacity. The capacity and GWhr contribution of Solar is given by the dataframes energy_Solar, capacity_Solar respectively.</p>
+<p>The 2 Solar projects are located in East Kootenay in Columbia region</p>
+<ol>
+<li>Tŝilhqot'in Solar Farm, Hanceville<ul>
+<li>The Tŝilhqot'in Solar Farm IPP by Dandzen Development Limited Partnership, acquired by 2016 Micro-Standing Offer Program is capable of delivering approximately 1.8 GWh of annual supply and approximately 0.99 MW of capacity.</li>
+</ul>
+</li>
+<li>SunMine, Kimberley<ul>
+<li>The SunMine IPP by Teck Resources Limited, acquired by 2010 Standing Offer Program is capable of delivering approximately 2.1 GWh of annual supply and approximately 1.1 MW of capacity.</li>
+</ul>
+</li>
+</ol>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14760,51 +14776,14 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[14]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_NSH</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">energy_NSH</span> <span class="o">=</span> <span class="n">data_NSH</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">capacity_NSH</span> <span class="o">=</span> <span class="n">data_NSH</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_Solar</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Solar&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">energy_Solar</span> <span class="o">=</span> <span class="n">data_Solar</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">capacity_Solar</span> <span class="o">=</span> <span class="n">data_Solar</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Region&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
 
      </div>
 </div>
 </div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data_NSH</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>66</pre>
-</div>
-
-</div>
-
-</div>
-
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -14813,7 +14792,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_NSH</span><span class="p">[</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_Solar</span>
 </pre></div>
 
      </div>
@@ -14830,80 +14809,6 @@ IPPs include power production companies, municipalities, First Nations and custo
 
     
     <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[43]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>7336.4</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_NSH</span><span class="p">[</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1983.2</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_NSH</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[15]:</div>
 
 
 
@@ -14926,35 +14831,44 @@ IPPs include power production companies, municipalities, First Nations and custo
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Region</th>
+      <th>Sub_region</th>
+      <th>Project_name</th>
+      <th>IPP_seller</th>
+      <th>Location</th>
+      <th>Type</th>
+      <th>Year</th>
+      <th>Call_process</th>
+      <th>Capacity(MW)</th>
       <th>Energy(GWh/yr)</th>
+      <th>Region</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Lower Mainland</td>
-      <td>4215.6</td>
+      <td>East Kootenay</td>
+      <td>Tŝilhqot'in Solar Farm</td>
+      <td>Dandzen Development Limited Partnership</td>
+      <td>Hanceville</td>
+      <td>Solar</td>
+      <td>2016</td>
+      <td>Micro-Standing Offer Program</td>
+      <td>0.99</td>
+      <td>1.8</td>
+      <td>Columbia Region</td>
     </tr>
     <tr>
       <th>1</th>
+      <td>East Kootenay</td>
+      <td>SunMine</td>
+      <td>Teck Resources Limited</td>
+      <td>Kimberley</td>
+      <td>Solar</td>
+      <td>2010</td>
+      <td>Standing Offer Program</td>
+      <td>1.10</td>
+      <td>2.1</td>
       <td>Columbia Region</td>
-      <td>1335.7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>North Coast</td>
-      <td>1323.1</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Vancouver Island</td>
-      <td>366.2</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Peace Region</td>
-      <td>95.8</td>
     </tr>
   </tbody>
 </table>
@@ -14973,7 +14887,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[16]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_NSH</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_Solar</span>
 </pre></div>
 
      </div>
@@ -15013,34 +14927,14 @@ IPPs include power production companies, municipalities, First Nations and custo
     <tr style="text-align: right;">
       <th></th>
       <th>Region</th>
-      <th>Capacity(MW)</th>
+      <th>Energy(GWh/yr)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Lower Mainland</td>
-      <td>1046.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
       <td>Columbia Region</td>
-      <td>509.1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>North Coast</td>
-      <td>313.8</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Vancouver Island</td>
-      <td>93.4</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Peace Region</td>
-      <td>20.5</td>
+      <td>3.9</td>
     </tr>
   </tbody>
 </table>
@@ -15053,46 +14947,13 @@ IPPs include power production companies, municipalities, First Nations and custo
 
 </div>
 
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For Non-storage Hydro, the capacity and energy contributions of each region individually analysed</p>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="1.-Lower-Mainland">1. Lower Mainland<a class="anchor-link" href="#1.-Lower-Mainland">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For the lower mainland region, the capacity and GWhr contribution of Non-Storage Hydro resource by location is given in the capacity_LM_Loc and energy_LM_Loc dataframes respectively.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_LM</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lower Mainland&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">energy_LM_Loc</span> <span class="o">=</span> <span class="n">data_LM</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">capacity_LM_Loc</span> <span class="o">=</span> <span class="n">data_LM</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_LM_Loc</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_Solar</span>
 </pre></div>
 
      </div>
@@ -15108,7 +14969,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[17]:</div>
 
 
 
@@ -15131,70 +14992,15 @@ IPPs include power production companies, municipalities, First Nations and custo
   <thead>
     <tr style="text-align: right;">
       <th></th>
-      <th>Location</th>
+      <th>Region</th>
       <th>Capacity(MW)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Powell River</td>
-      <td>258.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Pemberton</td>
-      <td>189.7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Mission</td>
-      <td>188.7</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Squamish</td>
-      <td>172.9</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Sechelt</td>
-      <td>91.6</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Harrison Hot Springs</td>
-      <td>68.1</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Whistler</td>
-      <td>34.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Port Mellon</td>
-      <td>14.7</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Hope</td>
-      <td>11.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Boston Bar</td>
-      <td>9.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Agassiz</td>
-      <td>5.5</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Laidlaw</td>
-      <td>3.2</td>
+      <td>Columbia Region</td>
+      <td>2.09</td>
     </tr>
   </tbody>
 </table>
@@ -15207,1272 +15013,19 @@ IPPs include power production companies, municipalities, First Nations and custo
 
 </div>
 
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">capacity_LM_Loc</span><span class="p">[</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>1046.4</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_LM_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Energy(GWh/yr)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Powell River</td>
-      <td>889.1</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Squamish</td>
-      <td>802.6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Mission</td>
-      <td>793.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Pemberton</td>
-      <td>716.1</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Sechelt</td>
-      <td>447.8</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Harrison Hot Springs</td>
-      <td>245.9</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Whistler</td>
-      <td>168.0</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>Port Mellon</td>
-      <td>47.4</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>Boston Bar</td>
-      <td>37.0</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>Hope</td>
-      <td>37.0</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>Agassiz</td>
-      <td>21.0</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>Laidlaw</td>
-      <td>10.3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">energy_LM_Loc</span><span class="p">[</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="mi">3</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>4215.6</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The bar chart energy_LM_Loc_chart, shows for Non-Storage Hydro, the energy contribution of the project and the call process by which it was acquired.</p>
-<p>The bar chart capacity_LM_Loc_chart, shows for Non-Storage Hydro, the capacity contribution of each of these projects and the call process by which it was acquired.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Non-Storage Hydro in Lower Mainland by IPP Projects&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_LM</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">energy_LM_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">energy_LM_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[20]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-0bc52f2d444f4ee389dd4abbc16256e2.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-0bc52f2d444f4ee389dd4abbc16256e2.vega-embed details,
-  #altair-viz-0bc52f2d444f4ee389dd4abbc16256e2.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-0bc52f2d444f4ee389dd4abbc16256e2"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0bc52f2d444f4ee389dd4abbc16256e2") {
-      outputDiv = document.getElementById("altair-viz-0bc52f2d444f4ee389dd4abbc16256e2");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Lower Mainland by IPP Projects"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Lower Mainland by IPP Projects"}}], "data": {"name": "data-ee36b86c46d1c1bbee6994a830756307"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-ee36b86c46d1c1bbee6994a830756307": [{"Sub_region": "Lower Mainland", "Project_name": "Sakwi Creek Run of River", "IPP_seller": "Sakwi Creek Hydro Limited Partnership", "Location": "Agassiz", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 5.5, "Energy(GWh/yr)": 21.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Boston Bar", "IPP_seller": "Boston Bar Limited Partnership", "Location": "Boston Bar", "Type": "Non-Storage Hydro", "Year": "2017", "Call_process": "Negotiated EPA", "Capacity(MW)": 9.0, "Energy(GWh/yr)": 37.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Big Silver - Shovel Creek", "IPP_seller": "Big Silver Creek Power Limited Partnership", "Location": "Harrison Hot Springs", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 40.6, "Energy(GWh/yr)": 158.6, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Bremner - Trio", "IPP_seller": "Bremner Trio Hydro Corp.", "Location": "Harrison Hot Springs", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 27.5, "Energy(GWh/yr)": 87.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Hunter Creek Run-of-River Hydroelectric Project", "IPP_seller": "Hunter Creek Hydro Limited Partnership", "Location": "Hope", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 37.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lorenzetta Creek Hydroelectric Project", "IPP_seller": "Zella Holdings Ltd.", "Location": "Laidlaw", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 3.2, "Energy(GWh/yr)": 10.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Kwalsa Energy", "IPP_seller": "Harrison Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 90.0, "Energy(GWh/yr)": 384.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Stave Energy", "IPP_seller": "Harrison Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 60.0, "Energy(GWh/yr)": 264.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Northwest Stave River", "IPP_seller": "Northwest Stave River Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 17.5, "Energy(GWh/yr)": 64.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Tretheway Creek", "IPP_seller": "Tretheway Creek Power LP", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 21.2, "Energy(GWh/yr)": 80.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Boulder Creek", "IPP_seller": "Boulder Creek Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 25.3, "Energy(GWh/yr)": 92.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Lillooet River", "IPP_seller": "Upper Lillooet River Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 81.4, "Energy(GWh/yr)": 333.8, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Miller Creek Power", "IPP_seller": "Brown Miller Power LP", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 33.0, "Energy(GWh/yr)": 118.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Rutherford Creek Hydro", "IPP_seller": "Rutherford Creek Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 50.0, "Energy(GWh/yr)": 172.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Box Canyon", "IPP_seller": "Box Canyon Hydro Corporation", "Location": "Port Mellon", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 14.7, "Energy(GWh/yr)": 47.4, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "East Toba and Montrose", "IPP_seller": "Toba Montrose General Partnership", "Location": "Powell River", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 196.0, "Energy(GWh/yr)": 715.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Jimmie Creek", "IPP_seller": "Jimmie Creek Limited Partnership", "Location": "Powell River", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 62.0, "Energy(GWh/yr)": 174.1, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lower Clowhom", "IPP_seller": "Clowhom Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 48.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Clowhom", "IPP_seller": "Clowhom Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 48.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lower Bear Hydro", "IPP_seller": "Bear Hydro Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 46.2, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Bear Hydro", "IPP_seller": "Bear Hydro Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 73.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Narrows Inlet tems", "IPP_seller": "sayamkwu Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 33.0, "Energy(GWh/yr)": 147.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Sechelt Creek", "IPP_seller": "MPT Hydro LP", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 16.6, "Energy(GWh/yr)": 84.6, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Mamquam Hydro", "IPP_seller": "Atlantic Power (Coastal Rivers) Corporation", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "1988", "Call_process": "Greater Than 5 MW", "Capacity(MW)": 58.0, "Energy(GWh/yr)": 250.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Mamquam Hydro", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Greater Than 40 GWh", "Capacity(MW)": 25.0, "Energy(GWh/yr)": 108.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Ashlu Creek Water Power", "IPP_seller": "Ashlu Creek Investments LP", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 49.9, "Energy(GWh/yr)": 268.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Culliton Creek", "IPP_seller": "Culliton Creek Power Limited Partnership", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 15.0, "Energy(GWh/yr)": 73.9, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Skookum Power", "IPP_seller": "Skookum Creek Power Partnership", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 25.0, "Energy(GWh/yr)": 102.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Brandywine Creek Small Hydro", "IPP_seller": "Rockford Energy Corp.", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 7.6, "Energy(GWh/yr)": 34.1, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Fitzsimmons Creek", "IPP_seller": "Fitzsimmons Creek Hydro Limited Partnership", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 7.9, "Energy(GWh/yr)": 36.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Wedgemount Creek IPP", "IPP_seller": "Concord Wedgemount Creek General Partnership", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 5.4, "Energy(GWh/yr)": 19.8, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Soo River", "IPP_seller": "Joint Venture", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 13.1, "Energy(GWh/yr)": 78.1, "Region": "Lower Mainland"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Non-Storage Hydro in Lower Mainland by IPP Projects&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_LM</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">cap_LM_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">cap_LM_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-2edefd7893d344688b104a5b55d73946.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-2edefd7893d344688b104a5b55d73946.vega-embed details,
-  #altair-viz-2edefd7893d344688b104a5b55d73946.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-2edefd7893d344688b104a5b55d73946"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2edefd7893d344688b104a5b55d73946") {
-      outputDiv = document.getElementById("altair-viz-2edefd7893d344688b104a5b55d73946");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Lower Mainland by IPP Projects"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Lower Mainland by IPP Projects"}}], "data": {"name": "data-ee36b86c46d1c1bbee6994a830756307"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-ee36b86c46d1c1bbee6994a830756307": [{"Sub_region": "Lower Mainland", "Project_name": "Sakwi Creek Run of River", "IPP_seller": "Sakwi Creek Hydro Limited Partnership", "Location": "Agassiz", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 5.5, "Energy(GWh/yr)": 21.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Boston Bar", "IPP_seller": "Boston Bar Limited Partnership", "Location": "Boston Bar", "Type": "Non-Storage Hydro", "Year": "2017", "Call_process": "Negotiated EPA", "Capacity(MW)": 9.0, "Energy(GWh/yr)": 37.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Big Silver - Shovel Creek", "IPP_seller": "Big Silver Creek Power Limited Partnership", "Location": "Harrison Hot Springs", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 40.6, "Energy(GWh/yr)": 158.6, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Bremner - Trio", "IPP_seller": "Bremner Trio Hydro Corp.", "Location": "Harrison Hot Springs", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 27.5, "Energy(GWh/yr)": 87.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Hunter Creek Run-of-River Hydroelectric Project", "IPP_seller": "Hunter Creek Hydro Limited Partnership", "Location": "Hope", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 37.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lorenzetta Creek Hydroelectric Project", "IPP_seller": "Zella Holdings Ltd.", "Location": "Laidlaw", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 3.2, "Energy(GWh/yr)": 10.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Kwalsa Energy", "IPP_seller": "Harrison Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 90.0, "Energy(GWh/yr)": 384.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Stave Energy", "IPP_seller": "Harrison Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 60.0, "Energy(GWh/yr)": 264.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Northwest Stave River", "IPP_seller": "Northwest Stave River Hydro Limited Partnership", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 17.5, "Energy(GWh/yr)": 64.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Tretheway Creek", "IPP_seller": "Tretheway Creek Power LP", "Location": "Mission", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 21.2, "Energy(GWh/yr)": 80.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Boulder Creek", "IPP_seller": "Boulder Creek Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 25.3, "Energy(GWh/yr)": 92.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Lillooet River", "IPP_seller": "Upper Lillooet River Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 81.4, "Energy(GWh/yr)": 333.8, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Miller Creek Power", "IPP_seller": "Brown Miller Power LP", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 33.0, "Energy(GWh/yr)": 118.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Rutherford Creek Hydro", "IPP_seller": "Rutherford Creek Power Limited Partnership", "Location": "Pemberton", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 50.0, "Energy(GWh/yr)": 172.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Box Canyon", "IPP_seller": "Box Canyon Hydro Corporation", "Location": "Port Mellon", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 14.7, "Energy(GWh/yr)": 47.4, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "East Toba and Montrose", "IPP_seller": "Toba Montrose General Partnership", "Location": "Powell River", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 196.0, "Energy(GWh/yr)": 715.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Jimmie Creek", "IPP_seller": "Jimmie Creek Limited Partnership", "Location": "Powell River", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 62.0, "Energy(GWh/yr)": 174.1, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lower Clowhom", "IPP_seller": "Clowhom Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 48.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Clowhom", "IPP_seller": "Clowhom Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 11.0, "Energy(GWh/yr)": 48.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Lower Bear Hydro", "IPP_seller": "Bear Hydro Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 46.2, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Bear Hydro", "IPP_seller": "Bear Hydro Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 73.3, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Narrows Inlet tems", "IPP_seller": "sayamkwu Limited Partnership", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 33.0, "Energy(GWh/yr)": 147.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Sechelt Creek", "IPP_seller": "MPT Hydro LP", "Location": "Sechelt", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 16.6, "Energy(GWh/yr)": 84.6, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Mamquam Hydro", "IPP_seller": "Atlantic Power (Coastal Rivers) Corporation", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "1988", "Call_process": "Greater Than 5 MW", "Capacity(MW)": 58.0, "Energy(GWh/yr)": 250.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Upper Mamquam Hydro", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Greater Than 40 GWh", "Capacity(MW)": 25.0, "Energy(GWh/yr)": 108.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Ashlu Creek Water Power", "IPP_seller": "Ashlu Creek Investments LP", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 49.9, "Energy(GWh/yr)": 268.7, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Culliton Creek", "IPP_seller": "Culliton Creek Power Limited Partnership", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 15.0, "Energy(GWh/yr)": 73.9, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Skookum Power", "IPP_seller": "Skookum Creek Power Partnership", "Location": "Squamish", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 25.0, "Energy(GWh/yr)": 102.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Brandywine Creek Small Hydro", "IPP_seller": "Rockford Energy Corp.", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 7.6, "Energy(GWh/yr)": 34.1, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Fitzsimmons Creek", "IPP_seller": "Fitzsimmons Creek Hydro Limited Partnership", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 7.9, "Energy(GWh/yr)": 36.0, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Wedgemount Creek IPP", "IPP_seller": "Concord Wedgemount Creek General Partnership", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 5.4, "Energy(GWh/yr)": 19.8, "Region": "Lower Mainland"}, {"Sub_region": "Lower Mainland", "Project_name": "Soo River", "IPP_seller": "Joint Venture", "Location": "Whistler", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 13.1, "Energy(GWh/yr)": 78.1, "Region": "Lower Mainland"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="2.-Vancouver-Island">2. Vancouver Island<a class="anchor-link" href="#2.-Vancouver-Island">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For the Vancouver Island region, the capacity and GWhr contribution of the Non-Storage Hydro resource by location is given in the capacity_VI_Loc and energy_VI_Loc dataframes respectively.</p>
+<p>The capacity and GWhr contribution of the Solar resource is given in the capacity_CR_Loc and energy_CR_Loc dataframes respectively.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_VI</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Vancouver Island&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">energy_VI_Loc</span> <span class="o">=</span> <span class="n">data_VI</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">capacity_VI_Loc</span> <span class="o">=</span> <span class="n">data_VI</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_VI_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Energy(GWh/yr)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Port McNeil</td>
-      <td>174.9</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Port Alberni</td>
-      <td>95.2</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Ucluelet</td>
-      <td>47.8</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Gold River</td>
-      <td>31.9</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Tahsis</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Gabriola Island</td>
-      <td>0.4</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_VI_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Capacity(MW)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Port McNeil</td>
-      <td>45.0</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Port Alberni</td>
-      <td>21.8</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Ucluelet</td>
-      <td>15.5</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Gold River</td>
-      <td>6.6</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Tahsis</td>
-      <td>4.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Gabriola Island</td>
-      <td>0.5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The bar chart energy_VI_Loc_chart, shows the energy contribution for each of these Non-Storage Hydro projects and the call process by which it was acquired.</p>
-<p>The bar chart capacity_VI_Loc_chart, shows the capacity contribution for each of these Non-Storage Hydro projects and the call process by which it was acquired.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Non-Storage Hydro in Vancouver Island by IPP Projects&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_VI</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">energy_VI_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">energy_VI_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-89c9956256d4469f8f5f1e1844b9bf81.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-89c9956256d4469f8f5f1e1844b9bf81.vega-embed details,
-  #altair-viz-89c9956256d4469f8f5f1e1844b9bf81.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-89c9956256d4469f8f5f1e1844b9bf81"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-89c9956256d4469f8f5f1e1844b9bf81") {
-      outputDiv = document.getElementById("altair-viz-89c9956256d4469f8f5f1e1844b9bf81");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Vancouver Island by IPP Projects"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Vancouver Island by IPP Projects"}}], "data": {"name": "data-f693cd34f9fd53723e35a56071b927f2"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f693cd34f9fd53723e35a56071b927f2": [{"Sub_region": "Vancouver Island", "Project_name": "Coats IPP", "IPP_seller": "Crofter's Gleann Enterprises", "Location": "Gabriola Island", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 0.5, "Energy(GWh/yr)": 0.4, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Cypress Creek", "IPP_seller": "Synex Energy Resources Ltd", "Location": "Gold River", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 2.8, "Energy(GWh/yr)": 12.4, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Mears Creek", "IPP_seller": "Mears Hydro Limited Partnership", "Location": "Gold River", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 3.8, "Energy(GWh/yr)": 19.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Marion 3 Creek", "IPP_seller": "Marion Creek Hydro Inc.", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 4.6, "Energy(GWh/yr)": 17.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "South Sutton Creek", "IPP_seller": "South Sutton Creek Hydro Inc.", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 4.9, "Energy(GWh/yr)": 26.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "China Creek Small Hydroelectric", "IPP_seller": "Upnit Power Limited Partnership", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 6.3, "Energy(GWh/yr)": 24.7, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Doran Taylor", "IPP_seller": "Doran Taylor Hydro (JV)", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2017", "Call_process": "Negotiated EPA", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 27.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Kokish River", "IPP_seller": "Kwagis Power Limited Partnership", "Location": "Port McNeil", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 45.0, "Energy(GWh/yr)": 174.9, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Barr Creek", "IPP_seller": "Barr Creek Limited Partnership", "Location": "Tahsis", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 4.0, "Energy(GWh/yr)": 16.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Canoe Creek Hydro", "IPP_seller": "Canoe Creek Hydro Company", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 5.5, "Energy(GWh/yr)": 16.2, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Haa-ak-suuk Creek Hydro", "IPP_seller": "Haa-ak-suuk Creek Hydro Limited Partnership", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 20.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Winchie Creek Hydro", "IPP_seller": "Winchie Creek Hydro Limited Partnership", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 4.0, "Energy(GWh/yr)": 11.1, "Region": "Vancouver Island"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Non-Storage Hydro in Vancouver Island by IPP Projects&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_VI</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">cap_VI_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">cap_VI_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-7429078b04ef491a83de52ed02cb37fb.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-7429078b04ef491a83de52ed02cb37fb.vega-embed details,
-  #altair-viz-7429078b04ef491a83de52ed02cb37fb.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-7429078b04ef491a83de52ed02cb37fb"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7429078b04ef491a83de52ed02cb37fb") {
-      outputDiv = document.getElementById("altair-viz-7429078b04ef491a83de52ed02cb37fb");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Vancouver Island by IPP Projects"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Vancouver Island by IPP Projects"}}], "data": {"name": "data-f693cd34f9fd53723e35a56071b927f2"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-f693cd34f9fd53723e35a56071b927f2": [{"Sub_region": "Vancouver Island", "Project_name": "Coats IPP", "IPP_seller": "Crofter's Gleann Enterprises", "Location": "Gabriola Island", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 0.5, "Energy(GWh/yr)": 0.4, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Cypress Creek", "IPP_seller": "Synex Energy Resources Ltd", "Location": "Gold River", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 2.8, "Energy(GWh/yr)": 12.4, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Mears Creek", "IPP_seller": "Mears Hydro Limited Partnership", "Location": "Gold River", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 3.8, "Energy(GWh/yr)": 19.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Marion 3 Creek", "IPP_seller": "Marion Creek Hydro Inc.", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 4.6, "Energy(GWh/yr)": 17.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "South Sutton Creek", "IPP_seller": "South Sutton Creek Hydro Inc.", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 4.9, "Energy(GWh/yr)": 26.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "China Creek Small Hydroelectric", "IPP_seller": "Upnit Power Limited Partnership", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 6.3, "Energy(GWh/yr)": 24.7, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Doran Taylor", "IPP_seller": "Doran Taylor Hydro (JV)", "Location": "Port Alberni", "Type": "Non-Storage Hydro", "Year": "2017", "Call_process": "Negotiated EPA", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 27.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Kokish River", "IPP_seller": "Kwagis Power Limited Partnership", "Location": "Port McNeil", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 45.0, "Energy(GWh/yr)": 174.9, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Barr Creek", "IPP_seller": "Barr Creek Limited Partnership", "Location": "Tahsis", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 4.0, "Energy(GWh/yr)": 16.0, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Canoe Creek Hydro", "IPP_seller": "Canoe Creek Hydro Company", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2008", "Call_process": "Standing Offer Program", "Capacity(MW)": 5.5, "Energy(GWh/yr)": 16.2, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Haa-ak-suuk Creek Hydro", "IPP_seller": "Haa-ak-suuk Creek Hydro Limited Partnership", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 20.5, "Region": "Vancouver Island"}, {"Sub_region": "Vancouver Island", "Project_name": "Winchie Creek Hydro", "IPP_seller": "Winchie Creek Hydro Limited Partnership", "Location": "Ucluelet", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 4.0, "Energy(GWh/yr)": 11.1, "Region": "Vancouver Island"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="3.-Peace-Region">3. Peace Region<a class="anchor-link" href="#3.-Peace-Region">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For Peace region, the capacity and GWhr contribution of the Non-Storage Hydro resource by location is given in the capacity_PR_Loc and energy_PR_Loc dataframes respectively.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_PR</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Peace Region&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">energy_PR_Loc</span> <span class="o">=</span> <span class="n">data_PR</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">capacity_PR_Loc</span> <span class="o">=</span> <span class="n">data_PR</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_PR_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Energy(GWh/yr)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>McBride</td>
-      <td>63.3</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Valemount</td>
-      <td>32.5</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_PR_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Capacity(MW)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>McBride</td>
-      <td>12.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Valemount</td>
-      <td>8.1</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>The bar chart energy_PR_Loc_chart, shows the energy contribution of the project and the call process by which it was acquired.</p>
-<p>The bar chart capacity_PR_Loc_chart, shows the capacity contribution of each of these projects and the call process by which it was acquired.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Non-Storage Hydro in Peace Region by IPP Project&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_PR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">energy_PR_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">energy_PR_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[30]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-9d6728bd11fe488ba1f35df09fad02ec.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-9d6728bd11fe488ba1f35df09fad02ec.vega-embed details,
-  #altair-viz-9d6728bd11fe488ba1f35df09fad02ec.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-9d6728bd11fe488ba1f35df09fad02ec"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9d6728bd11fe488ba1f35df09fad02ec") {
-      outputDiv = document.getElementById("altair-viz-9d6728bd11fe488ba1f35df09fad02ec");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Peace Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Peace Region by IPP Project"}}], "data": {"name": "data-c99655fe2b53e659ad33e1bed03a4384"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-c99655fe2b53e659ad33e1bed03a4384": [{"Sub_region": "Central Interior", "Project_name": "Castle Creek", "IPP_seller": "Castle Mountain Hydro Ltd.", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 34.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "McIntosh Creek Waterpower Project", "IPP_seller": "Snowshoe Power Ltd.", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 1.2, "Energy(GWh/yr)": 4.1, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "East Twin Creek Hydro", "IPP_seller": "Valemount Hydro Limited Partnership", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2011", "Call_process": "Negotiated EPA", "Capacity(MW)": 1.6, "Energy(GWh/yr)": 6.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Robson Valley", "IPP_seller": "Robson Valley Power Corporation", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2020", "Call_process": "Negotiated EPA", "Capacity(MW)": 3.6, "Energy(GWh/yr)": 19.2, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Hystad Creek Hydro", "IPP_seller": "Valemount Hydro Limited Partnership", "Location": "Valemount", "Type": "Non-Storage Hydro", "Year": "2000", "Call_process": "RFP", "Capacity(MW)": 5.7, "Energy(GWh/yr)": 20.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Hauer Creek", "IPP_seller": "Hauer Creek Power Inc.", "Location": "Valemount", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 2.4, "Energy(GWh/yr)": 12.5, "Region": "Peace Region"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Non-Storage Hydro in Peace Region by IPP Project&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_PR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">cap_PR_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">cap_PR_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-37035274a8d44600ac61d7045d7a03da.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-37035274a8d44600ac61d7045d7a03da.vega-embed details,
-  #altair-viz-37035274a8d44600ac61d7045d7a03da.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-37035274a8d44600ac61d7045d7a03da"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-37035274a8d44600ac61d7045d7a03da") {
-      outputDiv = document.getElementById("altair-viz-37035274a8d44600ac61d7045d7a03da");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Peace Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Peace Region by IPP Project"}}], "data": {"name": "data-c99655fe2b53e659ad33e1bed03a4384"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-c99655fe2b53e659ad33e1bed03a4384": [{"Sub_region": "Central Interior", "Project_name": "Castle Creek", "IPP_seller": "Castle Mountain Hydro Ltd.", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 6.0, "Energy(GWh/yr)": 34.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "McIntosh Creek Waterpower Project", "IPP_seller": "Snowshoe Power Ltd.", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 1.2, "Energy(GWh/yr)": 4.1, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "East Twin Creek Hydro", "IPP_seller": "Valemount Hydro Limited Partnership", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2011", "Call_process": "Negotiated EPA", "Capacity(MW)": 1.6, "Energy(GWh/yr)": 6.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Robson Valley", "IPP_seller": "Robson Valley Power Corporation", "Location": "McBride", "Type": "Non-Storage Hydro", "Year": "2020", "Call_process": "Negotiated EPA", "Capacity(MW)": 3.6, "Energy(GWh/yr)": 19.2, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Hystad Creek Hydro", "IPP_seller": "Valemount Hydro Limited Partnership", "Location": "Valemount", "Type": "Non-Storage Hydro", "Year": "2000", "Call_process": "RFP", "Capacity(MW)": 5.7, "Energy(GWh/yr)": 20.0, "Region": "Peace Region"}, {"Sub_region": "Central Interior", "Project_name": "Hauer Creek", "IPP_seller": "Hauer Creek Power Inc.", "Location": "Valemount", "Type": "Non-Storage Hydro", "Year": "2001", "Call_process": "Less Than 40 GWh", "Capacity(MW)": 2.4, "Energy(GWh/yr)": 12.5, "Region": "Peace Region"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="4.-Columbia-Region">4. Columbia Region<a class="anchor-link" href="#4.-Columbia-Region">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For Columbia region, the capacity and GWhr contribution of the Non-Storage Hydro resource by location is given in the capacity_CR_Loc and energy_CR_Loc dataframes respectively.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_CR</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Columbia Region&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_CR</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Solar&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Columbia Region&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">energy_CR_Loc</span> <span class="o">=</span> <span class="n">data_CR</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 <span class="n">capacity_CR_Loc</span> <span class="o">=</span> <span class="n">data_CR</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
 </pre></div>
@@ -16485,106 +15038,10 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_CR_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Energy(GWh/yr)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Trail</td>
-      <td>627.4</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Revelstoke</td>
-      <td>274.7</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lytton</td>
-      <td>223.4</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Kamloops</td>
-      <td>81.0</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Gold Bridge</td>
-      <td>74.3</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Lillooet</td>
-      <td>54.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Sandon</td>
-      <td>0.9</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_CR_Loc</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_CR_Loc</span>
 </pre></div>
 
      </div>
@@ -16624,44 +15081,90 @@ IPPs include power production companies, municipalities, First Nations and custo
     <tr style="text-align: right;">
       <th></th>
       <th>Location</th>
+      <th>Energy(GWh/yr)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Kimberley</td>
+      <td>2.1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Hanceville</td>
+      <td>1.8</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_CR_Loc</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Location</th>
       <th>Capacity(MW)</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>0</th>
-      <td>Trail</td>
-      <td>335.0</td>
+      <td>Kimberley</td>
+      <td>1.10</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>Revelstoke</td>
-      <td>66.6</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Lytton</td>
-      <td>50.0</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Gold Bridge</td>
-      <td>21.3</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>Kamloops</td>
-      <td>20.0</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>Lillooet</td>
-      <td>16.0</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>Sandon</td>
-      <td>0.2</td>
+      <td>Hanceville</td>
+      <td>0.99</td>
     </tr>
   </tbody>
 </table>
@@ -16684,15 +15187,15 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Non-Storage Hydro in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Solar in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
 
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_CR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_CR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
                     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
                     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="mi">150</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">energy_CR_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
     <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
 <span class="n">energy_CR_Loc_chart</span>
@@ -16711,30 +15214,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[47]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-97efc0ad653844f884bb286d2b806966.vega-embed {
+  #altair-viz-686fa9c29851401bbdb31fe7edc7d58d.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-97efc0ad653844f884bb286d2b806966.vega-embed details,
-  #altair-viz-97efc0ad653844f884bb286d2b806966.vega-embed details summary {
+  #altair-viz-686fa9c29851401bbdb31fe7edc7d58d.vega-embed details,
+  #altair-viz-686fa9c29851401bbdb31fe7edc7d58d.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-97efc0ad653844f884bb286d2b806966"></div>
+<div id="altair-viz-686fa9c29851401bbdb31fe7edc7d58d"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-97efc0ad653844f884bb286d2b806966") {
-      outputDiv = document.getElementById("altair-viz-97efc0ad653844f884bb286d2b806966");
+    if (outputDiv.id !== "altair-viz-686fa9c29851401bbdb31fe7edc7d58d") {
+      outputDiv = document.getElementById("altair-viz-686fa9c29851401bbdb31fe7edc7d58d");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16780,7 +15283,7 @@ IPPs include power production companies, municipalities, First Nations and custo
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Columbia Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in Columbia Region by IPP Project"}}], "data": {"name": "data-d16dfe2159457b9070dd6b8c3a832d59"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-d16dfe2159457b9070dd6b8c3a832d59": [{"Sub_region": "Kelly Lake Nicola", "Project_name": "Jamie Creek", "IPP_seller": "Jamie Creek LP", "Location": "Gold Bridge", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 21.3, "Energy(GWh/yr)": 74.3, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Bone Creek Hydro", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Kamloops", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 20.0, "Energy(GWh/yr)": 81.0, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Walden North", "IPP_seller": "Cayoose Creek Power Limited Partnership", "Location": "Lillooet", "Type": "Non-Storage Hydro", "Year": "1989", "Call_process": "Less Than 5 MW", "Capacity(MW)": 16.0, "Energy(GWh/yr)": 54.0, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Kwoiek Creek Hydroelectric", "IPP_seller": "Kwoiek Creek Resources Limited Partnership", "Location": "Lytton", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 50.0, "Energy(GWh/yr)": 223.4, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "South Cranberry Creek", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 8.5, "Energy(GWh/yr)": 26.4, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Cranberry Creek Power", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 3.0, "Energy(GWh/yr)": 9.0, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "South Cranberry Creek - R", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 0.1, "Energy(GWh/yr)": 5.8, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Akolkolex", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 40.5, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Pingston Creek", "IPP_seller": "Joint Venture", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 45.0, "Energy(GWh/yr)": 193.0, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Silversmith Power & Light", "IPP_seller": "Silversmith Power & Light Corporation", "Location": "Sandon", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 0.2, "Energy(GWh/yr)": 0.9, "Region": "Columbia Region"}, {"Sub_region": "Selkirk", "Project_name": "Waneta Expansion", "IPP_seller": "Waneta Expansion Power Corporation", "Location": "Trail", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 335.0, "Energy(GWh/yr)": 627.4, "Region": "Columbia Region"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar", "height": 20}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Solar in Columbia Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Solar in Columbia Region by IPP Project"}}], "data": {"name": "data-0bde7b073c32dae1f814102009b3afcb"}, "height": 150, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-0bde7b073c32dae1f814102009b3afcb": [{"Sub_region": "East Kootenay", "Project_name": "Ts\u0302ilhqot'in Solar Farm", "IPP_seller": "Dandzen Development Limited Partnership", "Location": "Hanceville", "Type": "Solar", "Year": "2016", "Call_process": "Micro-Standing Offer Program", "Capacity(MW)": 0.99, "Energy(GWh/yr)": 1.8, "Region": "Columbia Region"}, {"Sub_region": "East Kootenay", "Project_name": "SunMine", "IPP_seller": "Teck Resources Limited", "Location": "Kimberley", "Type": "Solar", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 1.1, "Energy(GWh/yr)": 2.1, "Region": "Columbia Region"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 
@@ -16793,15 +15296,15 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[49]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Non-Storage Hydro in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Solar in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
 
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_CR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
+<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_CR</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">(</span><span class="n">height</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
                     <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
                     <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span><span class="n">height</span><span class="o">=</span><span class="mi">150</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
 <span class="n">cap_CR_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
     <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
 <span class="n">cap_CR_Loc_chart</span>
@@ -16820,30 +15323,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[49]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-26d3db1bfafb44238ff04957dea8fa50.vega-embed {
+  #altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-26d3db1bfafb44238ff04957dea8fa50.vega-embed details,
-  #altair-viz-26d3db1bfafb44238ff04957dea8fa50.vega-embed details summary {
+  #altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a.vega-embed details,
+  #altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-26d3db1bfafb44238ff04957dea8fa50"></div>
+<div id="altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-26d3db1bfafb44238ff04957dea8fa50") {
-      outputDiv = document.getElementById("altair-viz-26d3db1bfafb44238ff04957dea8fa50");
+    if (outputDiv.id !== "altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a") {
+      outputDiv = document.getElementById("altair-viz-f5b2b6e34af44f1b86ae8ad811657b8a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16889,404 +15392,7 @@ IPPs include power production companies, municipalities, First Nations and custo
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Columbia Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in Columbia Region by IPP Project"}}], "data": {"name": "data-d16dfe2159457b9070dd6b8c3a832d59"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-d16dfe2159457b9070dd6b8c3a832d59": [{"Sub_region": "Kelly Lake Nicola", "Project_name": "Jamie Creek", "IPP_seller": "Jamie Creek LP", "Location": "Gold Bridge", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 21.3, "Energy(GWh/yr)": 74.3, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Bone Creek Hydro", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Kamloops", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 20.0, "Energy(GWh/yr)": 81.0, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Walden North", "IPP_seller": "Cayoose Creek Power Limited Partnership", "Location": "Lillooet", "Type": "Non-Storage Hydro", "Year": "1989", "Call_process": "Less Than 5 MW", "Capacity(MW)": 16.0, "Energy(GWh/yr)": 54.0, "Region": "Columbia Region"}, {"Sub_region": "Kelly Lake Nicola", "Project_name": "Kwoiek Creek Hydroelectric", "IPP_seller": "Kwoiek Creek Resources Limited Partnership", "Location": "Lytton", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 50.0, "Energy(GWh/yr)": 223.4, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "South Cranberry Creek", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2003", "Call_process": "Green Power Generation", "Capacity(MW)": 8.5, "Energy(GWh/yr)": 26.4, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Cranberry Creek Power", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2006", "Call_process": "Open Call", "Capacity(MW)": 3.0, "Energy(GWh/yr)": 9.0, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "South Cranberry Creek - R", "IPP_seller": "Cranberry Creek Hydro LP", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 0.1, "Energy(GWh/yr)": 5.8, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Akolkolex", "IPP_seller": "Canadian Hydro Developers Inc.", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 10.0, "Energy(GWh/yr)": 40.5, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Pingston Creek", "IPP_seller": "Joint Venture", "Location": "Revelstoke", "Type": "Non-Storage Hydro", "Year": "2022", "Call_process": "EPA Renewal Program", "Capacity(MW)": 45.0, "Energy(GWh/yr)": 193.0, "Region": "Columbia Region"}, {"Sub_region": "Revelstoke Ashton Creek", "Project_name": "Silversmith Power & Light", "IPP_seller": "Silversmith Power & Light Corporation", "Location": "Sandon", "Type": "Non-Storage Hydro", "Year": "2016", "Call_process": "Negotiated EPA", "Capacity(MW)": 0.2, "Energy(GWh/yr)": 0.9, "Region": "Columbia Region"}, {"Sub_region": "Selkirk", "Project_name": "Waneta Expansion", "IPP_seller": "Waneta Expansion Power Corporation", "Location": "Trail", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 335.0, "Energy(GWh/yr)": 627.4, "Region": "Columbia Region"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h4 id="5.-North-Coast">5. North Coast<a class="anchor-link" href="#5.-North-Coast">&#182;</a></h4>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>For North Coast, the capacity and GWhr contribution of the Non-Storage Hydro resource by location is given in the capacity_NC_Loc and energy_NC_Loc dataframes respectively.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_NC</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Non-Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;North Coast&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">energy_NC_Loc</span> <span class="o">=</span> <span class="n">data_NC</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-<span class="n">capacity_NC_Loc</span> <span class="o">=</span> <span class="n">data_NC</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">:</span><span class="s1">&#39;sum&#39;</span><span class="p">})</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span> <span class="o">=</span> <span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">,</span><span class="n">ascending</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_NC_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Energy(GWh/yr)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Stewart</td>
-      <td>1229.9</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Terrace</td>
-      <td>80.9</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Bella Bella</td>
-      <td>12.3</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_NC_Loc</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Location</th>
-      <th>Capacity(MW)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>Stewart</td>
-      <td>278.8</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Terrace</td>
-      <td>20.0</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Bella Bella</td>
-      <td>15.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Non-Storage Hydro in North Coast by IPP Project&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_NC</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">energy_NC_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Energy(GWh/yr))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">energy_NC_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-06e3da1228f54d608079c2bd647a9e22.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-06e3da1228f54d608079c2bd647a9e22.vega-embed details,
-  #altair-viz-06e3da1228f54d608079c2bd647a9e22.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-06e3da1228f54d608079c2bd647a9e22"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-06e3da1228f54d608079c2bd647a9e22") {
-      outputDiv = document.getElementById("altair-viz-06e3da1228f54d608079c2bd647a9e22");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in North Coast by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Energy(GWh/yr)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Energy(GWh/yr)", "title": "Energy(GWh/yr)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Annual GWhr contribution of Non-Storage Hydro in North Coast by IPP Project"}}], "data": {"name": "data-af1987be2ed3f657a61af682054d8b89"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-af1987be2ed3f657a61af682054d8b89": [{"Sub_region": "North Coast", "Project_name": "Ocean Falls", "IPP_seller": "Boralex Ocean Falls LP", "Location": "Bella Bella", "Type": "Non-Storage Hydro", "Year": "", "Call_process": "Non-Integrated Areas RFP", "Capacity(MW)": 15.0, "Energy(GWh/yr)": 12.3, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Forrest Kerr Hydroelectric", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 195.0, "Energy(GWh/yr)": 934.9, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "McLymont Creek", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 66.0, "Energy(GWh/yr)": 244.4, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Volcano Creek", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 17.8, "Energy(GWh/yr)": 50.6, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Dasque - Middle", "IPP_seller": "Swift Limited Partnership", "Location": "Terrace", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 20.0, "Energy(GWh/yr)": 80.9, "Region": "North Coast"}]}}, {"mode": "vega-lite"});
-</script>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Non-Storage Hydro in North Coast by IPP Project&#39;</span><span class="p">)</span>
-
-<span class="n">capacity_IPP</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">Chart</span><span class="p">(</span><span class="n">data_NC</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="n">title</span><span class="p">)</span><span class="o">.</span><span class="n">mark_bar</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Y</span><span class="p">(</span><span class="s1">&#39;Project_name&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Project Name&#39;</span><span class="p">,</span><span class="n">sort</span><span class="o">=</span><span class="s1">&#39;x&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">X</span><span class="p">(</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">),</span>
-                    <span class="n">alt</span><span class="o">.</span><span class="n">Color</span><span class="p">(</span><span class="s1">&#39;Call_process&#39;</span><span class="p">,</span> <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Call Process&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">properties</span><span class="p">(</span> <span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
-<span class="n">cap_NC_Loc_chart</span> <span class="o">=</span> <span class="n">capacity_IPP</span> <span class="o">+</span> <span class="n">capacity_IPP</span><span class="o">.</span><span class="n">mark_text</span><span class="p">(</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">align</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="n">dx</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="s1">&#39;sum(Capacity(MW))&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="n">alt</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">))</span>
-<span class="n">cap_NC_Loc_chart</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-
-<style>
-  #altair-viz-d78b5370a62d47e6bd324e86b94f0cd0.vega-embed {
-    width: 100%;
-    display: flex;
-  }
-
-  #altair-viz-d78b5370a62d47e6bd324e86b94f0cd0.vega-embed details,
-  #altair-viz-d78b5370a62d47e6bd324e86b94f0cd0.vega-embed details summary {
-    position: relative;
-  }
-</style>
-<div id="altair-viz-d78b5370a62d47e6bd324e86b94f0cd0"></div>
-<script type="text/javascript">
-  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
-  (function(spec, embedOpt){
-    let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d78b5370a62d47e6bd324e86b94f0cd0") {
-      outputDiv = document.getElementById("altair-viz-d78b5370a62d47e6bd324e86b94f0cd0");
-    }
-    const paths = {
-      "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
-      "vega-lib": "https://cdn.jsdelivr.net/npm/vega-lib?noext",
-      "vega-lite": "https://cdn.jsdelivr.net/npm/vega-lite@5.20.1?noext",
-      "vega-embed": "https://cdn.jsdelivr.net/npm/vega-embed@6?noext",
-    };
-
-    function maybeLoadScript(lib, version) {
-      var key = `${lib.replace("-", "")}_version`;
-      return (VEGA_DEBUG[key] == version) ?
-        Promise.resolve(paths[lib]) :
-        new Promise(function(resolve, reject) {
-          var s = document.createElement('script');
-          document.getElementsByTagName("head")[0].appendChild(s);
-          s.async = true;
-          s.onload = () => {
-            VEGA_DEBUG[key] = version;
-            return resolve(paths[lib]);
-          };
-          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
-          s.src = paths[lib];
-        });
-    }
-
-    function showError(err) {
-      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
-      throw err;
-    }
-
-    function displayChart(vegaEmbed) {
-      vegaEmbed(outputDiv, spec, embedOpt)
-        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
-    }
-
-    if(typeof define === "function" && define.amd) {
-      requirejs.config({paths});
-      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
-    } else {
-      maybeLoadScript("vega", "5")
-        .then(() => maybeLoadScript("vega-lite", "5.20.1"))
-        .then(() => maybeLoadScript("vega-embed", "6"))
-        .catch(showError)
-        .then(() => displayChart(vegaEmbed));
-    }
-  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar"}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in North Coast by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Non-Storage Hydro in North Coast by IPP Project"}}], "data": {"name": "data-af1987be2ed3f657a61af682054d8b89"}, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-af1987be2ed3f657a61af682054d8b89": [{"Sub_region": "North Coast", "Project_name": "Ocean Falls", "IPP_seller": "Boralex Ocean Falls LP", "Location": "Bella Bella", "Type": "Non-Storage Hydro", "Year": "", "Call_process": "Non-Integrated Areas RFP", "Capacity(MW)": 15.0, "Energy(GWh/yr)": 12.3, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Forrest Kerr Hydroelectric", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 195.0, "Energy(GWh/yr)": 934.9, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "McLymont Creek", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 66.0, "Energy(GWh/yr)": 244.4, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Volcano Creek", "IPP_seller": "Coast Mountain Hydro Limited Partnership", "Location": "Stewart", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Negotiated EPA", "Capacity(MW)": 17.8, "Energy(GWh/yr)": 50.6, "Region": "North Coast"}, {"Sub_region": "North Coast", "Project_name": "Dasque - Middle", "IPP_seller": "Swift Limited Partnership", "Location": "Terrace", "Type": "Non-Storage Hydro", "Year": "2010", "Call_process": "Clean Power Call", "Capacity(MW)": 20.0, "Energy(GWh/yr)": 80.9, "Region": "North Coast"}]}}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "bar", "height": 20}, "encoding": {"color": {"field": "Call_process", "title": "Call Process", "type": "nominal"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Solar in Columbia Region by IPP Project"}}, {"mark": {"type": "text", "align": "left", "color": "black", "dx": 3}, "encoding": {"color": {"value": "black"}, "text": {"aggregate": "sum", "field": "Capacity(MW)", "type": "quantitative"}, "x": {"aggregate": "sum", "field": "Capacity(MW)", "title": "Capacity(MW)", "type": "quantitative"}, "y": {"field": "Project_name", "sort": "x", "title": "Project Name", "type": "nominal"}}, "title": {"text": "The Capacity contribution of Solar in Columbia Region by IPP Project"}}], "data": {"name": "data-0bde7b073c32dae1f814102009b3afcb"}, "height": 150, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-0bde7b073c32dae1f814102009b3afcb": [{"Sub_region": "East Kootenay", "Project_name": "Ts\u0302ilhqot'in Solar Farm", "IPP_seller": "Dandzen Development Limited Partnership", "Location": "Hanceville", "Type": "Solar", "Year": "2016", "Call_process": "Micro-Standing Offer Program", "Capacity(MW)": 0.99, "Energy(GWh/yr)": 1.8, "Region": "Columbia Region"}, {"Sub_region": "East Kootenay", "Project_name": "SunMine", "IPP_seller": "Teck Resources Limited", "Location": "Kimberley", "Type": "Solar", "Year": "2010", "Call_process": "Standing Offer Program", "Capacity(MW)": 1.1, "Energy(GWh/yr)": 2.1, "Region": "Columbia Region"}]}}, {"mode": "vega-lite"});
 </script>
 </div>
 
@@ -17304,7 +15410,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This study was cariied out to learn about the capacity and energy distribution of Non-Storage Hydro IPP resources around various regions in the province.</p>
+<p>This study was cariied out to learn about the capacity and energy contribution of Solar IPP resources around various regions in the province.</p>
 
 </div>
 </div>

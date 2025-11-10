@@ -1,0 +1,120 @@
+Sub_region,Project_name,IPP_seller,Location,Type,Year,Call_process,Capacity(MW),Energy(GWh/yr)
+CI,150 Mile House ERG, EnPower Green Energy Generation Limited Partnership, 150 Mile House, ERG, 2006, Open Call, 6, 34
+LM,Sakwi Creek Run of River, Sakwi Creek Hydro Limited Partnership, Agassiz, Non-Storage Hydro, 2006, Open Call, 5.5, 21 
+RSAC,Tolko Armstrong, Tolko Industries Ltd., Armstrong, Biomass, 2019, Biomass Energy Program, 20.4, 126.8
+NC,Pine Creek, XEITL Limited Partnership, Atlin, Storage Hydro, 2006, Non-Integrated Areas RFP, 2, 4.6
+NC,Ocean Falls, Boralex Ocean Falls LP, Bella Bella, Non-Storage Hydro, , Non-Integrated Areas RFP, 15, 12.3
+LM,Boston Bar, Boston Bar Limited Partnership, Boston Bar, Non-Storage Hydro, 2017, Negotiated EPA, 9, 37
+LM,SEEGEN (Metro Vancouver), Covanta Burnaby Renewable Energy ULC, Burnaby, MSW, 2014, Negotiated EPA, 24.8, 166
+KLN,Cache Creek Landfill Gas Utilization Plant, Wastech Services Ltd., Cache Creek, Biogas, 2010, Standing Offer Program, 4.8, 35.6
+VI,Island Generation, V.I. Power Limited Partnership, Campbell River, Gas Fired Thermal, 2022, Negotiated EPA, 275, 0
+SK,Brilliant Expansion 1, Brilliant Expansion Power Corporation, Castlegar, Storage Hydro, 2003, Green Power Generation, 120, 202.7
+SK,Brilliant Expansion 2, Brilliant Expansion Power Corporation, Castlegar, Storage Hydro, 2006, Open Call, 0, 226
+SK,Celgar Green Energy, Mercer Celgar Limited Partnership, Castlegar, Biomass, 2019, Biomass Energy Program, 100, 127.9
+PR,Dokie Wind, Dokie General Partnership, Chetwynd, Wind, 2009, Negotiated EPA, 144, 375
+PR,Chetwynd Biomass, West Fraser Mills Ltd., Chetwynd, Biomass, 2010, Bioenergy Call, 12, 96.4
+PR,Sukunka Wind Energy Project, Sukunka Wind Project Limited Partnership, Chetwynd, Wind, 2010, Standing Offer Program, 15, 49.7
+PR,Zonnebeke Wind Energy Project, Zonnebeke Wind Project Limited Partnership, Chetwynd, Wind, 2010, Standing Offer Program, 15, 45.6
+VI,Bear Mountain Wind Park, Bear Mountain Wind Limited Partnership, Dawson Creek, Wind, 2006, Open Call, 102, 197
+NC,Hluey Lake, MPT Hydro LP, Dease Lake, Storage Hydro, 2020, Non-Integrated Areas NEPA, 3, 5
+LM,Houweling Nurseries (Delta) Cogeneration, Houweling Nurseries Property Ltd., Delta, Gas Fired Thermal, 2014, Negotiated EPA, 8.8, 64.7
+NC,Fort St. James Green Energy, Bionorth Energy Limited Partnership, Fort St. James, Biomass, 2010, Bioenergy Call, 40, 303.5
+PR,Kwadacha Bioenergy Project, Kwadacha Green Energy Limited Partnership, Fort Ware, Biomass, 2016, Non-Integrated Areas RFP, 0.5, 1
+NC,Fraser Lake Biomass, West Fraser Mills Ltd., Fraser Lake, Biomass, 2010, Bioenergy Call, 12, 96.4
+VI,Coats IPP, Crofter's Gleann Enterprises, Gabriola Island, Non-Storage Hydro, 2022, EPA Renewal Program, 0.5, 0.4
+KLN,Jamie Creek, Jamie Creek LP, Gold Bridge, Non-Storage Hydro, 2010, Clean Power Call, 21.3, 74.3
+VI,Cypress Creek, Synex Energy Resources Ltd, Gold River, Non-Storage Hydro, 2008, Standing Offer Program, 2.8, 12.4
+VI,Mears Creek, Mears Hydro Limited Partnership, Gold River, Non-Storage Hydro, 2022, EPA Renewal Program, 3.8, 19.5
+EK,LP Golden Biomass, Pacific Woodtech Canada Holdings Ltd, Golden, Biomass, 2010, Standing Offer Program, 7.5, 3.5
+EK,Tŝilhqot'in Solar Farm, Dandzen Development Limited Partnership, Hanceville, Solar, 2016, Micro-Standing Offer Program, 0.99, 1.8
+LM,Big Silver - Shovel Creek, Big Silver Creek Power Limited Partnership, Harrison Hot Springs, Non-Storage Hydro, 2010, Clean Power Call, 40.6, 158.6
+LM,Bremner - Trio, Bremner Trio Hydro Corp., Harrison Hot Springs, Non-Storage Hydro, 2010, Clean Power Call, 27.5, 87.3
+LM,Hunter Creek Run-of-River Hydroelectric Project, Hunter Creek Hydro Limited Partnership, Hope, Non-Storage Hydro, 2010, Standing Offer Program, 11, 37
+KLN,Bone Creek Hydro, Canadian Hydro Developers Inc., Kamloops, Non-Storage Hydro, 2006, Open Call, 20, 81
+KLN,Kamloops Green Energy, Kruger Kamloops Pulp LP, Kamloops, Biomass, 2010, Integrated Power Offer, 76, 288.3
+RSAC,Eldorado Reservoir, District of Lake Country, Kelowna, Storage Hydro, 2006, Open Call, 1.1, 4
+EK,SunMine, Teck Resources Limited, Kimberley, Solar, 2010, Standing Offer Program, 1.1, 2.1
+NC,Kemano, Rio Tinto Alcan Inc., Kitimat, Storage Hydro, 2007, Negotiated EPA, 896, 3307
+LM,Lorenzetta Creek Hydroelectric Project, Zella Holdings Ltd., Laidlaw, Non-Storage Hydro, 2010, Standing Offer Program, 3.2, 10.3
+KLN,Walden North, Cayoose Creek Power Limited Partnership, Lillooet, Non-Storage Hydro, 1989, Less Than 5 MW, 16, 54
+KLN,Kwoiek Creek Hydroelectric, Kwoiek Creek Resources Limited Partnership, Lytton, Non-Storage Hydro, 2006, Open Call, 50, 223.4
+CI,Conifex Green Energy, Conifex Power Limited Partnership, Mackenzie, Biomass, 2011, Negotiated EPA, 36, 220
+CI,Castle Creek, Castle Mountain Hydro Ltd., McBride, Non-Storage Hydro, 2010, Clean Power Call, 6, 34
+CI,McIntosh Creek Waterpower Project, Snowshoe Power Ltd., McBride, Non-Storage Hydro, 2010, Standing Offer Program, 1.2, 4.1
+CI,East Twin Creek Hydro, Valemount Hydro Limited Partnership, McBride, Non-Storage Hydro, 2011, Negotiated EPA, 1.6, 6
+CI,Robson Valley, Robson Valley Power Corporation, McBride, Non-Storage Hydro, 2020, Negotiated EPA, 3.6, 19.2
+KLN,Merritt Green Energy, Nicola Clean Power Ltd., Merritt, Biomass, 2010, Bioenergy Call, 40, 303.5
+LM,Kwalsa Energy, Harrison Hydro Limited Partnership, Mission, Non-Storage Hydro, 2006, Open Call, 90, 384
+LM,Upper Stave Energy, Harrison Hydro Limited Partnership, Mission, Non-Storage Hydro, 2006, Open Call, 60, 264
+LM,Northwest Stave River, Northwest Stave River Hydro Limited Partnership, Mission, Non-Storage Hydro, 2010, Clean Power Call, 17.5, 64.7
+LM,Tretheway Creek, Tretheway Creek Power LP, Mission, Non-Storage Hydro, 2010, Clean Power Call, 21.2, 80.7
+VI,Harmac Biomass, Nanaimo Forest Products Ltd., Nanaimo, Biomass, 2010, Integrated Power Offer, 55, 209
+VI,Greater Nanaimo PCC Cogeneration, Regional District of Nanaimo, Nanaimo, Biogas, 2010, Standing Offer Program, 0.355, 2
+VI,Nanaimo Reservoir #1 Energy Recovery, City of Nanaimo, Nanaimo, ERG, 2010, Standing Offer Program, 0.3, 1.1
+LM,Boulder Creek, Boulder Creek Power Limited Partnership, Pemberton, Non-Storage Hydro, 2010, Clean Power Call, 25.3, 92.3
+LM,Upper Lillooet River, Upper Lillooet River Power Limited Partnership, Pemberton, Non-Storage Hydro, 2010, Clean Power Call, 81.4, 333.8
+LM,Miller Creek Power, Brown Miller Power LP, Pemberton, Non-Storage Hydro, 2022, EPA Renewal Program, 33, 118
+LM,Rutherford Creek Hydro, Rutherford Creek Power Limited Partnership, Pemberton, Non-Storage Hydro, 2022, EPA Renewal Program, 50, 172
+VI,Marion 3 Creek, Marion Creek Hydro Inc., Port Alberni, Non-Storage Hydro, 2001, Less Than 40 GWh, 4.6, 17.5
+VI,South Sutton Creek, South Sutton Creek Hydro Inc., Port Alberni, Non-Storage Hydro, 2001, Less Than 40 GWh, 4.9, 26
+VI,China Creek Small Hydroelectric, Upnit Power Limited Partnership, Port Alberni, Non-Storage Hydro, 2003, Green Power Generation, 6.3, 24.7
+VI,Doran Taylor, Doran Taylor Hydro (JV), Port Alberni, Non-Storage Hydro, 2017, Negotiated EPA, 6, 27
+VI,Raging River, Raging River Power & Mining Inc., Port Alice, Storage Hydro, 2006, Open Call, 8, 30
+VI,Cape Scott Wind, Cape Scott Wind LP, Port Hardy, Wind, 2010, Clean Power Call, 99.2, 316.3
+VI,Kokish River, Kwagis Power Limited Partnership, Port McNeil, Non-Storage Hydro, 2010, Clean Power Call, 45, 174.9
+LM,Box Canyon, Box Canyon Hydro Corporation, Port Mellon, Non-Storage Hydro, 2010, Clean Power Call, 14.7, 47.4
+LM,Howe Sound Green Energy, Howe Sound Pulp and Paper Corporation, Port Mellon, Biomass, 2019, Biomass Energy Program, 112, 226.2
+LM,East Toba and Montrose, Toba Montrose General Partnership, Powell River, Non-Storage Hydro, 2006, Open Call, 196, 715
+LM,Jimmie Creek, Jimmie Creek Limited Partnership, Powell River, Non-Storage Hydro, 2010, Clean Power Call, 62, 174.1
+CI,Intercon Green Power, Canfor Pulp Ltd., Prince George, Biomass, 2010, Integrated Power Offer, 31.7, 73
+CI,Northwood Green Power, Canfor Pulp Ltd., Prince George, Biomass, 2010, Integrated Power Offer, 94.5, 159
+NC,Brown Lake, Brown Miller Power LP, Prince Rupert, Storage Hydro, 2022, EPA Renewal Program, 7.2, 57
+CI,Cariboo Pulp and Paper, West Fraser Mills Ltd., Quesnel, Biomass, 2010, Integrated Power Offer, 61.3, 172.3
+RSAC,South Cranberry Creek, Cranberry Creek Hydro LP, Revelstoke, Non-Storage Hydro, 2003, Green Power Generation, 8.5, 26.4
+RSAC,Cranberry Creek Power, Cranberry Creek Hydro LP, Revelstoke, Non-Storage Hydro, 2006, Open Call, 3, 9
+RSAC,South Cranberry Creek - R, Cranberry Creek Hydro LP, Revelstoke, Non-Storage Hydro, 2010, Standing Offer Program, 0.1, 5.8
+RSAC,Akolkolex, Canadian Hydro Developers Inc., Revelstoke, Non-Storage Hydro, 2016, Negotiated EPA, 10, 40.5
+RSAC,Pingston Creek, Joint Venture, Revelstoke, Non-Storage Hydro, 2022, EPA Renewal Program, 45, 193
+RSAC,Silversmith Power & Light, Silversmith Power & Light Corporation, Sandon, Non-Storage Hydro, 2016, Negotiated EPA, 0.2, 0.9
+NC,Moresby Lake, Atlantic Power (Coastal Rivers) Corporation, Sandspit, Storage Hydro, 2024, Non-Integrated Areas NEPA, 6, 20
+KLN,Savona ERG, EnPower Green Energy Generation Limited Partnership, Savona, ERG, 2006, Open Call, 6, 41
+LM,Lower Clowhom, Clowhom Limited Partnership, Sechelt, Non-Storage Hydro, 2006, Open Call, 11, 48
+LM,Tyson Creek Hydro, Tyson Creek Hydro Corp., Sechelt, Storage Hydro, 2006, Open Call, 9.3, 53.6
+LM,Upper Clowhom, Clowhom Limited Partnership, Sechelt, Non-Storage Hydro, 2006, Open Call, 11, 48
+LM,Lower Bear Hydro, Bear Hydro Limited Partnership, Sechelt, Non-Storage Hydro, 2008, Standing Offer Program, 10, 46.2
+LM,Upper Bear Hydro, Bear Hydro Limited Partnership, Sechelt, Non-Storage Hydro, 2008, Standing Offer Program, 10, 73.3
+LM,Narrows Inlet tems, sayamkwu Limited Partnership, Sechelt, Non-Storage Hydro, 2010, Clean Power Call, 33, 147.7
+LM,Sechelt Creek, MPT Hydro LP, Sechelt, Non-Storage Hydro, 2022, EPA Renewal Program, 16.6, 84.6
+EK,Skookumchuck Power, Skookumchuck Pulp Inc., Skookumchuck, Biomass, 2019, Biomass Energy Program, 51, 182.4
+SK,Arrow Lakes Hydro, Arrow Lakes Power Corporation, Slocan, Storage Hydro, 1998, Negotiated EPA, 185, 767
+EK,Crowsnest Pass, Enfinite BC LP, Sparwood, ERG, 2010, Clean Power Call, 10.5, 64.9
+LM,Mamquam Hydro, Atlantic Power (Coastal Rivers) Corporation, Squamish, Non-Storage Hydro, 1988, Greater Than 5 MW, 58, 250
+LM,Upper Mamquam Hydro, Canadian Hydro Developers Inc., Squamish, Non-Storage Hydro, 2001, Greater Than 40 GWh, 25, 108
+LM,Ashlu Creek Water Power, Ashlu Creek Investments LP, Squamish, Non-Storage Hydro, 2003, Green Power Generation, 49.9, 268.7
+LM,Culliton Creek, Culliton Creek Power Limited Partnership, Squamish, Non-Storage Hydro, 2010, Clean Power Call, 15, 73.9
+LM,Skookum Power, Skookum Creek Power Partnership, Squamish, Non-Storage Hydro, 2010, Clean Power Call, 25, 102
+LM,Squamish Power Project, Woodfibre LNG Limited Partnership, Squamish, Storage Hydro, 2010, Standing Offer Program, 1.6, 11.2
+NC,Long Lake Hydro, Long Lake Joint Venture, Stewart, Storage Hydro, 2010, Clean Power Call, 31, 152.6
+NC,Forrest Kerr Hydroelectric, Coast Mountain Hydro Limited Partnership, Stewart, Non-Storage Hydro, 2010, Negotiated EPA, 195, 934.9
+NC,McLymont Creek, Coast Mountain Hydro Limited Partnership, Stewart, Non-Storage Hydro, 2010, Negotiated EPA, 66, 244.4
+NC,Volcano Creek, Coast Mountain Hydro Limited Partnership, Stewart, Non-Storage Hydro, 2010, Negotiated EPA, 17.8, 50.6
+KLN,Shinish Creek, Wind Farm Zero Emissions Shinish Creek Limited Partnership, Summerland, Wind, 2010, Standing Offer Program, 15, 54.5
+VI,Barr Creek, Barr Creek Limited Partnership, Tahsis, Non-Storage Hydro, 2006, Open Call, 4, 16
+PR,McMahon Generating, McMahon Cogeneration Plant JV, Taylor, Gas Fired Thermal, 1988, Greater Than 5 MW, 120, 840
+NC,Dasque - Middle, Swift Limited Partnership, Terrace, Non-Storage Hydro, 2010, Clean Power Call, 20, 80.9
+SK,Waneta Expansion, Waneta Expansion Power Corporation, Trail, Non-Storage Hydro, 2010, Negotiated EPA, 335, 627.4
+PR,Meikle Wind, Meikle Wind Energy Limited Partnership, Tumbler Ridge, Wind, 2010, Clean Power Call, 184.6, 541
+PR,Quality Wind, Capital Power L.P., Tumbler Ridge, Wind, 2010, Clean Power Call, 142.2, 476.9
+PR,Moose Lake Wind Project, Moose Lake Wind Limited Partnership, Tumbler Ridge, Wind, 2010, Standing Offer Program, 15, 56
+VI,Canoe Creek Hydro, Canoe Creek Hydro Company, Ucluelet, Non-Storage Hydro, 2008, Standing Offer Program, 5.5, 16.2
+VI,Haa-ak-suuk Creek Hydro, Haa-ak-suuk Creek Hydro Limited Partnership, Ucluelet, Non-Storage Hydro, 2010, Standing Offer Program, 6, 20.5
+VI,Winchie Creek Hydro, Winchie Creek Hydro Limited Partnership, Ucluelet, Non-Storage Hydro, 2010, Standing Offer Program, 4, 11.1
+CI,Hystad Creek Hydro, Valemount Hydro Limited Partnership, Valemount, Non-Storage Hydro, 2000, RFP, 5.7, 20
+CI,Hauer Creek, Hauer Creek Power Inc., Valemount, Non-Storage Hydro, 2001, Less Than 40 GWh, 2.4, 12.5
+KLN,Pennask Wind Farm, Zero Emissions Pennask Limited Partnership, Westbank, Wind, 2010, Standing Offer Program, 15, 49.8
+LM,Brandywine Creek Small Hydro, Rockford Energy Corp., Whistler, Non-Storage Hydro, 2001, Less Than 40 GWh, 7.6, 34.1
+LM,Fitzsimmons Creek, Fitzsimmons Creek Hydro Limited Partnership, Whistler, Non-Storage Hydro, 2008, Standing Offer Program, 7.9, 36
+LM,Wedgemount Creek IPP, Concord Wedgemount Creek General Partnership, Whistler, Non-Storage Hydro, 2010, Standing Offer Program, 5.4, 19.8
+LM,Soo River, Joint Venture, Whistler, Non-Storage Hydro, 2016, Negotiated EPA, 13.1, 78.1
+CI,NWE (Williams Lake), Atlantic Power (Williams Lake) Ltd., Williams Lake, Biomass, 2019, Biomass Energy Program, 68, 388.4
+VI,Zeballos Lake, Zeballos Lake Hydro Limited Partnership, Zeballos, Storage Hydro, 2003, Green Power Generation, 21.9, 92.6

@@ -14854,7 +14854,6 @@ IPPs include power production companies, municipalities, First Nations and custo
       <th></th>
       <th>Region</th>
       <th>Energy(GWh/yr)</th>
-      <th>Capacity(MW)</th>
     </tr>
   </thead>
   <tbody>
@@ -14862,25 +14861,21 @@ IPPs include power production companies, municipalities, First Nations and custo
       <th>0</th>
       <td>North Coast</td>
       <td>3546.2</td>
-      <td>945.2</td>
     </tr>
     <tr>
       <th>1</th>
       <td>Columbia Region</td>
       <td>1199.7</td>
-      <td>306.1</td>
     </tr>
     <tr>
       <th>2</th>
       <td>Vancouver Island</td>
       <td>122.6</td>
-      <td>29.9</td>
     </tr>
     <tr>
       <th>3</th>
       <td>Lower Mainland</td>
       <td>64.8</td>
-      <td>10.9</td>
     </tr>
   </tbody>
 </table>
@@ -14899,7 +14894,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[17]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_SH</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_SH</span><span class="p">[</span><span class="s1">&#39;Energy(GWh/yr)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14919,53 +14914,87 @@ IPPs include power production companies, municipalities, First Nations and custo
 
 
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Region</th>
-      <th>Capacity(MW)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>North Coast</td>
-      <td>945.2</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>Columbia Region</td>
-      <td>306.1</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>Vancouver Island</td>
-      <td>29.9</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>Lower Mainland</td>
-      <td>10.9</td>
-    </tr>
-  </tbody>
-</table>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>4933.3</pre>
 </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[18]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_SH</span><span class="p">[</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[18]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>0    945.2
+1    306.1
+2     29.9
+3     10.9
+Name: Capacity(MW), dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[19]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="n">capacity_SH</span><span class="p">[</span><span class="s1">&#39;Capacity(MW)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[19]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>1292.1</pre>
 </div>
 
 </div>
@@ -14994,7 +15023,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[20]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_LM</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Lower Mainland&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15011,7 +15040,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_LM_Loc</span>
@@ -15030,7 +15059,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
 
 
 
@@ -15082,7 +15111,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[42]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_LM_Loc</span>
@@ -15101,7 +15130,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[42]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
 
 
 
@@ -15163,7 +15192,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[21]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[23]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Storage Hydro in Lower Mainland by IPP Projects&#39;</span><span class="p">)</span>
@@ -15190,30 +15219,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[21]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[23]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-04fd320eb0d6405c9df2115c2de8d984.vega-embed {
+  #altair-viz-7fcbb06b098a4921af5c1934832b04ea.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-04fd320eb0d6405c9df2115c2de8d984.vega-embed details,
-  #altair-viz-04fd320eb0d6405c9df2115c2de8d984.vega-embed details summary {
+  #altair-viz-7fcbb06b098a4921af5c1934832b04ea.vega-embed details,
+  #altair-viz-7fcbb06b098a4921af5c1934832b04ea.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-04fd320eb0d6405c9df2115c2de8d984"></div>
+<div id="altair-viz-7fcbb06b098a4921af5c1934832b04ea"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-04fd320eb0d6405c9df2115c2de8d984") {
-      outputDiv = document.getElementById("altair-viz-04fd320eb0d6405c9df2115c2de8d984");
+    if (outputDiv.id !== "altair-viz-7fcbb06b098a4921af5c1934832b04ea") {
+      outputDiv = document.getElementById("altair-viz-7fcbb06b098a4921af5c1934832b04ea");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15272,7 +15301,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[22]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[24]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Storage Hydro in Lower Mainland by IPP Projects&#39;</span><span class="p">)</span>
@@ -15299,30 +15328,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[22]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[24]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-3ea933e4b991462aa75030974176334e.vega-embed {
+  #altair-viz-0563516a0b904dcfb11666b4bd7f4679.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-3ea933e4b991462aa75030974176334e.vega-embed details,
-  #altair-viz-3ea933e4b991462aa75030974176334e.vega-embed details summary {
+  #altair-viz-0563516a0b904dcfb11666b4bd7f4679.vega-embed details,
+  #altair-viz-0563516a0b904dcfb11666b4bd7f4679.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-3ea933e4b991462aa75030974176334e"></div>
+<div id="altair-viz-0563516a0b904dcfb11666b4bd7f4679"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3ea933e4b991462aa75030974176334e") {
-      outputDiv = document.getElementById("altair-viz-3ea933e4b991462aa75030974176334e");
+    if (outputDiv.id !== "altair-viz-0563516a0b904dcfb11666b4bd7f4679") {
+      outputDiv = document.getElementById("altair-viz-0563516a0b904dcfb11666b4bd7f4679");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15392,7 +15421,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_VI</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Vancouver Island&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15409,7 +15438,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[44]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_VI_Loc</span>
@@ -15428,7 +15457,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[44]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
 
 
 
@@ -15483,7 +15512,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[25]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_VI_Loc</span>
@@ -15502,7 +15531,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[25]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
 
 
 
@@ -15561,7 +15590,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[26]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Storage Hydro in Vancouver Island by IPP Projects&#39;</span><span class="p">)</span>
@@ -15588,30 +15617,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[26]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[28]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-09e1f50224504009a48f7ba6cc550701.vega-embed {
+  #altair-viz-85cc434be62e434fbdcdc34a35fafb62.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-09e1f50224504009a48f7ba6cc550701.vega-embed details,
-  #altair-viz-09e1f50224504009a48f7ba6cc550701.vega-embed details summary {
+  #altair-viz-85cc434be62e434fbdcdc34a35fafb62.vega-embed details,
+  #altair-viz-85cc434be62e434fbdcdc34a35fafb62.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-09e1f50224504009a48f7ba6cc550701"></div>
+<div id="altair-viz-85cc434be62e434fbdcdc34a35fafb62"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-09e1f50224504009a48f7ba6cc550701") {
-      outputDiv = document.getElementById("altair-viz-09e1f50224504009a48f7ba6cc550701");
+    if (outputDiv.id !== "altair-viz-85cc434be62e434fbdcdc34a35fafb62") {
+      outputDiv = document.getElementById("altair-viz-85cc434be62e434fbdcdc34a35fafb62");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15670,7 +15699,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Storage Hydro in Vancouver Island by IPP Projects&#39;</span><span class="p">)</span>
@@ -15697,30 +15726,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-f9b76f9bed4c4893a63b32c298722ca9.vega-embed {
+  #altair-viz-1740404d4ef34c26a6bc3c04592b134c.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-f9b76f9bed4c4893a63b32c298722ca9.vega-embed details,
-  #altair-viz-f9b76f9bed4c4893a63b32c298722ca9.vega-embed details summary {
+  #altair-viz-1740404d4ef34c26a6bc3c04592b134c.vega-embed details,
+  #altair-viz-1740404d4ef34c26a6bc3c04592b134c.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-f9b76f9bed4c4893a63b32c298722ca9"></div>
+<div id="altair-viz-1740404d4ef34c26a6bc3c04592b134c"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-f9b76f9bed4c4893a63b32c298722ca9") {
-      outputDiv = document.getElementById("altair-viz-f9b76f9bed4c4893a63b32c298722ca9");
+    if (outputDiv.id !== "altair-viz-1740404d4ef34c26a6bc3c04592b134c") {
+      outputDiv = document.getElementById("altair-viz-1740404d4ef34c26a6bc3c04592b134c");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -15790,7 +15819,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[30]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_PR</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Peace Region&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15804,7 +15833,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[31]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">data_PR</span><span class="p">)</span>
@@ -15823,7 +15852,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[29]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[31]:</div>
 
 
 
@@ -15852,7 +15881,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[45]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_CR</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;Columbia Region&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -15868,7 +15897,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[46]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_CR_Loc</span>
@@ -15887,7 +15916,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[46]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
 
 
 
@@ -15948,7 +15977,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_CR_Loc</span>
@@ -15967,7 +15996,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[32]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
 
 
 
@@ -16031,7 +16060,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[35]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Storage Hydro in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
@@ -16058,30 +16087,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[33]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[35]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-9a7794ead8b8468d90f33a97dd3e7b91.vega-embed {
+  #altair-viz-78f116ba427e4642a5fe5eb81efaa760.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-9a7794ead8b8468d90f33a97dd3e7b91.vega-embed details,
-  #altair-viz-9a7794ead8b8468d90f33a97dd3e7b91.vega-embed details summary {
+  #altair-viz-78f116ba427e4642a5fe5eb81efaa760.vega-embed details,
+  #altair-viz-78f116ba427e4642a5fe5eb81efaa760.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-9a7794ead8b8468d90f33a97dd3e7b91"></div>
+<div id="altair-viz-78f116ba427e4642a5fe5eb81efaa760"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9a7794ead8b8468d90f33a97dd3e7b91") {
-      outputDiv = document.getElementById("altair-viz-9a7794ead8b8468d90f33a97dd3e7b91");
+    if (outputDiv.id !== "altair-viz-78f116ba427e4642a5fe5eb81efaa760") {
+      outputDiv = document.getElementById("altair-viz-78f116ba427e4642a5fe5eb81efaa760");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16140,7 +16169,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[34]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Storage Hydro in Columbia Region by IPP Project&#39;</span><span class="p">)</span>
@@ -16167,30 +16196,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[34]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[36]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-5c185bc0bd4b4c1689bf155ca21a1983.vega-embed {
+  #altair-viz-dda21cd18fb94a2aa044871c75cd6bcf.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-5c185bc0bd4b4c1689bf155ca21a1983.vega-embed details,
-  #altair-viz-5c185bc0bd4b4c1689bf155ca21a1983.vega-embed details summary {
+  #altair-viz-dda21cd18fb94a2aa044871c75cd6bcf.vega-embed details,
+  #altair-viz-dda21cd18fb94a2aa044871c75cd6bcf.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-5c185bc0bd4b4c1689bf155ca21a1983"></div>
+<div id="altair-viz-dda21cd18fb94a2aa044871c75cd6bcf"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-5c185bc0bd4b4c1689bf155ca21a1983") {
-      outputDiv = document.getElementById("altair-viz-5c185bc0bd4b4c1689bf155ca21a1983");
+    if (outputDiv.id !== "altair-viz-dda21cd18fb94a2aa044871c75cd6bcf") {
+      outputDiv = document.getElementById("altair-viz-dda21cd18fb94a2aa044871c75cd6bcf");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16260,7 +16289,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[47]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_NC</span> <span class="o">=</span> <span class="n">data</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Storage Hydro&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Region&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;North Coast&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -16278,7 +16307,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[48]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">energy_NC_Loc</span>
@@ -16297,7 +16326,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[48]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
 
 
 
@@ -16376,7 +16405,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">capacity_NC_Loc</span>
@@ -16395,7 +16424,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[37]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
 
 
 
@@ -16467,7 +16496,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Annual GWhr contribution of Storage Hydro in North Coast by IPP Project&#39;</span><span class="p">)</span>
@@ -16494,30 +16523,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[38]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[40]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-54ae1727851340fdb06af52b703386b7.vega-embed {
+  #altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-54ae1727851340fdb06af52b703386b7.vega-embed details,
-  #altair-viz-54ae1727851340fdb06af52b703386b7.vega-embed details summary {
+  #altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf.vega-embed details,
+  #altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-54ae1727851340fdb06af52b703386b7"></div>
+<div id="altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-54ae1727851340fdb06af52b703386b7") {
-      outputDiv = document.getElementById("altair-viz-54ae1727851340fdb06af52b703386b7");
+    if (outputDiv.id !== "altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf") {
+      outputDiv = document.getElementById("altair-viz-16666ce0c41f4c0ab5aa680c8fdc4ccf");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
@@ -16576,7 +16605,7 @@ IPPs include power production companies, municipalities, First Nations and custo
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[41]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="n">alt</span><span class="o">.</span><span class="n">TitleParams</span><span class="p">(</span><span class="s1">&#39;The Capacity contribution of Storage Hydro in North Coast by IPP Project&#39;</span><span class="p">)</span>
@@ -16603,30 +16632,30 @@ IPPs include power production companies, municipalities, First Nations and custo
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[39]:</div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[41]:</div>
 
 
 
 <div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
 
 <style>
-  #altair-viz-b396853d3d3f46ba9a1f2481e17c239b.vega-embed {
+  #altair-viz-007795fb2e5d4a29b98a203e8183ff22.vega-embed {
     width: 100%;
     display: flex;
   }
 
-  #altair-viz-b396853d3d3f46ba9a1f2481e17c239b.vega-embed details,
-  #altair-viz-b396853d3d3f46ba9a1f2481e17c239b.vega-embed details summary {
+  #altair-viz-007795fb2e5d4a29b98a203e8183ff22.vega-embed details,
+  #altair-viz-007795fb2e5d4a29b98a203e8183ff22.vega-embed details summary {
     position: relative;
   }
 </style>
-<div id="altair-viz-b396853d3d3f46ba9a1f2481e17c239b"></div>
+<div id="altair-viz-007795fb2e5d4a29b98a203e8183ff22"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b396853d3d3f46ba9a1f2481e17c239b") {
-      outputDiv = document.getElementById("altair-viz-b396853d3d3f46ba9a1f2481e17c239b");
+    if (outputDiv.id !== "altair-viz-007795fb2e5d4a29b98a203e8183ff22") {
+      outputDiv = document.getElementById("altair-viz-007795fb2e5d4a29b98a203e8183ff22");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm/vega@5?noext",
